@@ -26,7 +26,7 @@ def main():
     batch_size = 4
     head_num = 32
     seq_len = 64
-    head_dim = 128
+    head_dim = 256
     dtype = torch.float16
 
     q = torch.randn(batch_size, head_num, seq_len, head_dim, device="cuda", dtype=dtype)
