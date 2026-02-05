@@ -60,11 +60,11 @@ jobs:
     steps:
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: '3.13'
 
       # https://github.com/Jimver/cuda-toolkit/issues/395
       # - uses: Jimver/cuda-toolkit@v0.2.22
-      - uses: N-Storm/cuda-toolkit@v0.2.28
+      - uses: N-Storm/cuda-toolkit@v0.2.31
         with:
           cuda: ${{ inputs.cuda_major }}.${{ inputs.cuda_minor }}.${{ inputs.cuda_patch }}
           use-github-cache: false
@@ -100,7 +100,7 @@ jobs:
           $Env:PIP_INDEX_URL = "http://127.0.0.1:8000"
 
           $Env:DISTUTILS_USE_SDK = "1"
-          $Env:TORCH_CUDA_ARCH_LIST = "8.0 8.6 8.9 9.0 "
+          $Env:TORCH_CUDA_ARCH_LIST = "8.9"
           if (($Env:CUDA_MAJOR_VERSION -gt "12") -or ($Env:CUDA_MINOR_VERSION -gt "6"))
           {
             $Env:TORCH_CUDA_ARCH_LIST += "12.0 "
