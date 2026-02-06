@@ -110,7 +110,7 @@ jobs:
           }
           else
           {
-            $Env:CIBW_BUILD = "{cp313-win_amd64}"
+            $Env:CIBW_BUILD = "{cp313-win_amd64,}"
           }
           $Env:CIBW_BUILD_VERBOSITY = "1"
           # Sometimes torch may conflict with cibuildwheel's pinned dependency versions
